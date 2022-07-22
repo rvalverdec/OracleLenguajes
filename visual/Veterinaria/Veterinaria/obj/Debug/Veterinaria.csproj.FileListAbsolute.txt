@@ -1,0 +1,10 @@
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\bin\Debug\Veterinaria.exe.config
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\bin\Debug\Veterinaria.exe
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\bin\Debug\Veterinaria.pdb
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.Form1.resources
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.Properties.Resources.resources
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.csproj.GenerateResource.cache
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.csproj.CoreCompileInputs.cache
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.exe
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.pdb
+F:\Users\RAFA-PC\Escritorio\U\ORACLE lenguajes BD\Proyecto\visual\Veterinaria\Veterinaria\obj\Debug\Veterinaria.csproj.AssemblyReference.cache
