@@ -458,3 +458,70 @@ SELECT * FROM LISTA_MASCOTA_DETALLE;
     
     
     
+create table Audita_Salario(
+    IdEmpleado varchar2(50),
+    usuario varchar2(50),
+    fecha date,
+    SALARIO_ANTIGUO FLOAT(30),
+    SALARIO_NUEVO FLOAT(30)
+);
+
+
+-------------------Audita Salarios-----------
+ drop table audita_salario;
+
+create or replace TRIGGER AUDITA_SALARIO
+    after delete or update
+    on NOMINA
+    FOR EACH ROW
+    declare
+    v_USUARIO varchar (50);
+    v_FECHA date;
+BEGIN
+    SELECT USER,SYSDATE INTO V_USUARIO,V_FECHA FROM DUAL;
+    insert into Audita_Salario values(:OLD.ID_EMPLEADO, V_USUARIO, V_FECHA, :old.SALARIO, :new.SALARIO);
+    
+END;
+    -----prueba de audita------------
+    UPDATE NOMINA SET SALARIO = 8 WHERE ID_EMPLEADO=1;
+    -----Select---
+    Select * from AUDITA_SALARIO;
+    SELECT * FROM NOMINA;
+    
+    -------trigger empleados-------
+    drop table auditaEmpleado;
+create table auditaEmpleado(
+    nombre_empleado varchar2(50),
+    rol_nuevo varchar2(50),
+    rol_antiguo  varchar2(50),
+    usaurio varchar2(50),
+    fecha varchar2(50)
+
+);
+
+create or replace TRIGGER AUDITA_ROL
+    after delete or insert or update 
+    on empleado
+    for each row
+    declare
+        v_USUARIO varchar (50);
+        v_FECHA date;
+    begin
+        SELECT USER,SYSDATE INTO V_USUARIO,V_FECHA FROM DUAL;
+        IF INSERTING THEN
+        insert into auditaEmpleado (nombre_empleado, rol_nuevo, rol_antiguo, usaurio, fecha) 
+        values(:new.nombre_empleado, :new.role_empleado, :old.role_empleado, V_USUARIO, V_FECHA);
+        ELSIF UPDATING THEN
+        insert into auditaEmpleado (nombre_empleado, rol_nuevo, rol_antiguo, usaurio, fecha) 
+        values(:old.nombre_empleado, :new.role_empleado, :old.role_empleado, V_USUARIO, V_FECHA );
+        ELSIF DELETING THEN
+        insert into auditaEmpleado (nombre_empleado, rol_nuevo, rol_antiguo, usaurio, fecha) 
+        values(:old.nombre_empleado, :new.role_empleado, :old.role_empleado, V_USUARIO, V_FECHA);
+        
+        end if;
+    end;
+    ------prueba de audita empleado----
+    select * from empleado;
+    update empleado set role_empleado='ADMINISTRADOR' where id_empleado =3;
+    select * from auditaEmpleado;
+    
